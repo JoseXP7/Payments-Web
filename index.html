@@ -11,7 +11,7 @@
 	<section class="contenedor">
 		<h1>Rellena los campos</h1>
 
-		<form action="" method="post">
+		<form action="#" method="post">
 			<div class="data-one">
 			<select name="nacionalidad" id="nacionality">
 				<option value="venezuelan">V</option>
@@ -23,7 +23,11 @@
 
 		<div class="data-two">
 			<label for="email">Tu correo</label>
-			<input id="email" type="email" placeholder="100X.1234567890.ucla@gmail.com" required>
+			<input id="email" maxlength="28" type="email" placeholder="100X.12345678.ucla@gmail.com" required>
+			<span id="error-email">
+				<img src="images/error_icon.png" alt="Error icon">
+				Correo no valido, ¡sigue el formato!
+			</span>
 		</div>
 		
 		<div class="data-three">

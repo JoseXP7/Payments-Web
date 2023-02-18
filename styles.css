@@ -40,12 +40,29 @@ form {
 }
 
 .contenedor .data-one input, .data-two input {
+	outline: none;
 	border: none;
 	border-radius: 7px;
 	background: #FFFFFF;
 	height: 30px;
 	padding: 0 0 0 0.5em
 }
+
+.contenedor #error-email {
+	width: 300px;
+	display: flex;
+	align-items: center;
+	gap: 3px;
+	padding: 3px;
+	margin: 0.5em 0 0 0;
+	background: #FF7575;
+	border-radius: 20px;
+	font-size: 10px;
+}
+
+.contenedor #error-email img {
+	width: 32px
+} 
 
 .contenedor .data-two, .data-three {
 	display: flex;
