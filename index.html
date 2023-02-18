@@ -4,10 +4,45 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito&display=swap" rel="stylesheet">
 	<title>Reporta tu pago!</title>
 </head>
 <body>
-	<h1>Pronto Empezamos</h1>
+	<section class="contenedor">
+		<h1>Rellena los campos</h1>
+
+		<form action="" method="post">
+			<div class="data-one">
+			<select name="nacionalidad" id="nacionality">
+				<option value="venezuelan">V</option>
+				<option value="foreign">E</option>
+			</select>
+			<label for="identification">-</label>
+			<input id="identification" maxlength="9" type="number" oninput="maxlengthNumber(this);">
+		</div>
+
+		<div class="data-two">
+			<label for="email">Tu correo</label>
+			<input id="email" type="email" placeholder="100X.1234567890.ucla@gmail.com">
+		</div>
+		
+		<div class="data-three">
+			<label for="recibo">Adjunta tu capture</label>
+			<input type="file">
+		</div>
+
+		<div id="captcha">
+			
+		</div>
+
+		<div class="buttons">
+			<input type="submit" id="btn-send" value="Enviar!">
+			<input type="reset" class="btn-reset" value="Limpiar">
+		</div>
+		</form>
+
+	</section>
+	<!--josephcode_87 - I am the only one -->
 	<script src="app.js" type="text/javascript"></script>
 </body>
 </html>
