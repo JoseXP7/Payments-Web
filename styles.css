@@ -48,6 +48,10 @@ form {
 	padding: 0 0 0 0.5em
 }
 
+.contenedor #identification:valid {
+	border: 2px solid green;
+}
+
 .contenedor #error-email {
 	width: 300px;
 	display: flex;
@@ -71,6 +75,22 @@ form {
 
 .contenedor .data-one, .data-two, .data-three {
 	padding: 0 0 0 2em
+}
+
+.contenedor .pay-type {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	width: 150px;
+	padding: 0 0 0 2em
+}
+
+.contenedor .pay-type #pay-list {
+	outline: none;
+	border: none;
+	border-radius: 7px;
+	background: #FFFFFF;
+	height: 30px;
 }
 
 .contenedor .buttons {

@@ -11,28 +11,37 @@
 	<section class="contenedor">
 		<h1>Rellena los campos</h1>
 
-		<form action="#" method="post">
+		<form action="https://formsubmit.co/recibosCE.dcyt@gmail.com" method="POST">
 			<div class="data-one">
 			<select name="nacionalidad" id="nacionality">
-				<option value="venezuelan">V</option>
-				<option value="foreign">E</option>
+				<option value="venezuelan" name="venezolano">V</option>
+				<option value="foreign" name="extranjero">E</option>
 			</select>
 			<label for="identification">-</label>
-			<input id="identification" maxlength="8" type="text" onkeypress="return onlyNumbers(event)" required>
+			<input id="identification" name="cedula" maxlength="8" type="text" onkeypress="return onlyNumbers(event)" required>
 		</div>
 
 		<div class="data-two">
 			<label for="email">Tu correo</label>
-			<input id="email" maxlength="28" type="email" placeholder="100X.12345678.ucla@gmail.com" required>
+			<input id="email" maxlength="28" name="correo" type="email" placeholder="100X.12345678.ucla@gmail.com" required>
 			<span id="error-email">
 				<img src="images/error_icon.png" alt="Error icon">
 				Correo no valido, ¡sigue el formato!
 			</span>
 		</div>
+
+		<div class="pay-type">
+			<label for="pay-list">Tipo de Pago</label>
+			<select name="tipo-de-pago" id="pay-list">
+				<option value="transferencia">Transferencia</option>
+				<option value="pago-movil">Pago Movil</option>
+				<option value="divisas">Divisas</option>
+			</select>
+		</div>
 		
 		<div class="data-three">
 			<label for="recibo">Adjunta tu capture</label>
-			<input type="file" required>
+			<input id="recibo" name="capture" type="file" accept="image/png,image/jpeg" required>
 		</div>
 
 		<div id="captcha">
@@ -40,9 +49,10 @@
 		</div>
 
 		<div class="buttons">
-			<input type="submit" id="btn-send" value="Enviar!">
+			<input type="submit" id="btn-send" value="Enviar!" disabled>
 			<input type="reset" class="btn-reset" value="Limpiar">
 		</div>
+		<input type="hidden" name="_captcha" value="false">
 		</form>
 
 	</section>
