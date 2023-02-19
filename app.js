@@ -1,3 +1,5 @@
+let forma = document.getElementById("formulario")
+forma.addEventListener("submit", validarTodo)
 let errorMsg = document.getElementById("error-email")
 let identidad = document.getElementById("identification")
 
@@ -102,6 +104,24 @@ function recaptcha_ok() {
     }
 }
 
+function validarTodo(e) {
+	if (identidad.value.length == 0 && inputEmail.value == "" && inputFile.value == "") {
+		e.preventDefault()
+		Swal.fire({
+			icon: "error",
+			title: "Error",
+			text: "¡Tienes campos sin llenar!",
+			confirmButtonText: "OK!",
+			customClass: {
+				popup: "sweet_text"
+			}
+		})
+		return false
+	} else {
+		console.log("lleno")
+		return true
+	}
+}
 // a saber como funciona lo de arriba, solo se que funciona
 
 //formula /^[0-9-.]+[0-9-.]+[ucla]+@[gmail]+\.[com]{1,3}$/ maximo 28 caracteres
