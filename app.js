@@ -9,7 +9,7 @@ inputEmail.addEventListener("input", ()=> {
 })
 
 function validateEmail(email) {
-	let expReg = /^[0-9-.]+[0-9-.]+[ucla]+@[gmail]+\.[com]{1,3}$/
+	let expReg = /^(1001|1002|1003|1004|1005|1006)\.[\d]{8}\.(ucla)@(gmail)\.(com)$/
 
 	if (expReg.test(email) == true) {
 		inputEmail.style.border = '2px solid green'
@@ -126,7 +126,7 @@ function validarTodo(e) {
 
 //formula /^[0-9-.]+[0-9-.]+[ucla]+@[gmail]+\.[com]{1,3}$/ maximo 28 caracteres
 
-//formula 2: /^(1001|1002|1003|1004|1005|1006)\.(\d){8}\.[ucla]@[gmail]\.[com]$/
+//formula 2: /^(1001|1002|1003|1004|1005|1006)\.[\d]{8}\.(ucla)@(gmail)\.(com)$/
 
 
 
