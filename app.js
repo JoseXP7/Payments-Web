@@ -56,6 +56,25 @@ function onlyNumbers(evt) {
 	}
 }
 
+function recaptcha_ok() {
+    let response = grecaptcha.getResponse();
+
+    if(response.length == 0){
+        alert("Captcha no verificado");
+        document.getElementById("btn-send").disabled = true
+        return false;
+      event.preventDefault();
+    } else {
+      Swal.fire({
+      	icon: "info",
+      	title: "Captcha Completado!",
+      	text: "¡Estas a un paso de reportar tu pago!, presiona Enviar para reportar",
+      	confirmButtonText: "OK!"
+      });
+      document.getElementById("btn-send").disabled = false
+    }
+  }
+
 // a saber como funciona lo de arriba, solo se que funciona
 
 //formula /^[0-9-.]+[0-9-.]+[ucla]+@[gmail]+\.[com]{1,3}$/ maximo 28 caracteres

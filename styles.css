@@ -93,6 +93,12 @@ form {
 	height: 30px;
 }
 
+.contenedor #captcha {
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+
 .contenedor .buttons {
 	display: flex;
 	justify-content: center;
