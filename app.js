@@ -1,5 +1,6 @@
 let forma = document.getElementById("formulario")
 forma.addEventListener("submit", validarTodo)
+forma.addEventListener("submit", validateEmail)
 let errorMsg = document.getElementById("error-email")
 let identidad = document.getElementById("identification")
 
@@ -8,17 +9,24 @@ inputEmail.addEventListener("input", ()=> {
 	validateEmail(inputEmail.value)
 })
 
-function validateEmail(email) {
-	let expReg = /^(1001|1002|1003|1004|1005|1006)\.[\d]{8}\.(ucla)@(gmail)\.(com)$/
+let expReg = /^(1001|1002|1003|1004|1005|1006)\.[\d]{8}\.(ucla)@(gmail)\.(com)$/
 
-	if (expReg.test(email) == true) {
+function validateEmail(email) {
+	if (expReg.test(email)) {
 		inputEmail.style.border = '2px solid green'
 		errorMsg.style.visibility = 'hidden'
+		forma.removeEventListener("submit", validateEmail)
 		
 	} else {
 		inputEmail.style.border = '2px solid red'
 		errorMsg.style.visibility = 'visible'
+		cerrarForm(event)
 	}
+}
+
+function cerrarForm(event) {
+	 event.preventDefault()
+	 forma.addEventListener("submit", validateEmail)
 }
 
 Swal.fire({
@@ -124,7 +132,7 @@ function validarTodo(e) {
 }
 // a saber como funciona lo de arriba, solo se que funciona
 
-//formula /^[0-9-.]+[0-9-.]+[ucla]+@[gmail]+\.[com]{1,3}$/ maximo 28 caracteres
+//formula /^[0-9-.]+[0-9-.]+[ucla]+@[gmail]+\.[com]{1,3}$/ maximo 28 caracteres (Fuera de servicio, la de abajo ta mejor, gracia david 🫶)
 
 //formula 2: /^(1001|1002|1003|1004|1005|1006)\.[\d]{8}\.(ucla)@(gmail)\.(com)$/
 
