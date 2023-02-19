@@ -19,6 +19,15 @@ function validateEmail(email) {
 	}
 }
 
+Swal.fire({
+    imageUrl: "images/mileslogo.png",
+    imageWidth: 135,
+    imageHeight: 102,
+    title: "¿Como reportar tu pago?",
+    text: "Rellena los campos correctamente con tu C.I, tu correo institucional y selecciona si tu pago es una Transferencia, Pago Movil o Divisas, y por ultimo añade el capture (Solo formato jpg, jpeg, png)",
+    confirmButtonText: "OK!"
+});
+
 
 let inputFile = document.getElementById("recibo")
 

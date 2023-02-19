@@ -9,6 +9,11 @@ body {
 	background: linear-gradient(318deg, rgba(114,196,254,1) 0%, rgba(165,81,255,1) 37%, rgba(53,97,254,1) 69%, rgba(114,196,254,1) 100%);
 }
 
+.swal2-title {
+  font-size: 2em !important;
+  font-family: 'Nunito', sans-serif;
+}
+
 .contenedor {
 	background: #362FD9;
 	display: flex;
