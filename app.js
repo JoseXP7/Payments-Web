@@ -2,7 +2,11 @@ let forma = document.getElementById("formulario")
 forma.addEventListener("submit", validarTodo)
 forma.addEventListener("submit", validateEmail)
 let errorMsg = document.getElementById("error-email")
+
 let identidad = document.getElementById("identification")
+identidad.addEventListener("input", ()=> {
+	validarNumbers(identidad.value)
+})
 
 let inputEmail = document.getElementById("email")
 inputEmail.addEventListener("input", ()=> {
@@ -71,22 +75,20 @@ function validarInput() {
 	}
 }
 
-function onlyNumbers(evt) {
-	if(window.event){
-	keynum = evt.keyCode;
+let regexNumbers = /^[0-9]{8}$/
+identidad.addEventListener("input", limiteNumbers)
+
+function  validarNumbers(identification) {
+	if (regexNumbers.test(identification)) {
+		identidad.style.border = '2px solid green'
+	} else {
+		identidad.style.border = '2px solid red'
 	}
-	else{
-	keynum = evt.which;
-	}
-	
-	if((keynum > 47 && keynum < 58) || keynum == 8 || keynum== 13)
-	{
-	return true;
-	}
-	else
-	{
-	alert("Ingresar solo numeros");
-	return false;
+}
+
+function limiteNumbers(identification) {
+	if (identidad.value.length > 8) {
+		identidad.value = identidad.value.slice(0, 8)
 	}
 }
 
@@ -136,5 +138,6 @@ function validarTodo(e) {
 
 //formula 2: /^(1001|1002|1003|1004|1005|1006)\.[\d]{8}\.(ucla)@(gmail)\.(com)$/
 
+//nota 19-02-23 4:34pm es legible todo lo que se escribio pero puede volver loco a cualquiera
 
 
