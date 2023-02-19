@@ -25,7 +25,10 @@ Swal.fire({
     imageHeight: 102,
     title: "¿Como reportar tu pago?",
     text: "Rellena los campos correctamente con tu C.I, tu correo institucional y selecciona si tu pago es una Transferencia, Pago Movil o Divisas, y por ultimo añade el capture (Solo formato jpg, jpeg, png)",
-    confirmButtonText: "OK!"
+    confirmButtonText: "OK!",
+    customClass: {
+    	popup: "sweet_text" //añade una clase personalizada y para usar en css, el popup es el texto de la alerta
+    }
 });
 
 
@@ -38,11 +41,23 @@ function validarInput() {
 	let extPermitidas = /(.jpg|.png|.jpeg)$/i
 
 	if (!extPermitidas.exec(ruta)) {
-		alert("Asegurate de haber seleccionado un archivo .png/.jpg")
+		Swal.fire({
+      	icon: "error",
+      	title: "¡Extension no admitida!",
+      	text: "Asegurate de haber seleccionado un archivo .png/.jpg",
+      	confirmButtonText: "OK!",
+      	customClass: {
+    	popup: "sweet_text"
+    }
+      });
 		inputFile.value = ""
 		return false
 	} else {
-		alert("archivo subido")
+		Swal.fire({
+      	icon: "success",
+      	title: "¡Subiendo archivo!",
+      	confirmButtonText: "OK!"
+      });
 	}
 }
 
@@ -78,11 +93,14 @@ function recaptcha_ok() {
       	icon: "info",
       	title: "Captcha Completado!",
       	text: "¡Estas a un paso de reportar tu pago!, presiona Enviar para reportar",
-      	confirmButtonText: "OK!"
+      	confirmButtonText: "OK!",
+      	customClass: {
+    	popup: "sweet_text"
+    }
       });
       document.getElementById("btn-send").disabled = false
     }
-  }
+}
 
 // a saber como funciona lo de arriba, solo se que funciona
 
