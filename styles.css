@@ -19,6 +19,10 @@ body {
   font-family: 'Nunito', sans-serif !important;
 }
 
+.logo {
+	margin: 0 0 0.5em 0
+}
+
 .logo img {
 	width: 90px;
 }
@@ -29,7 +33,7 @@ body {
 	flex-direction: column;
 	border-radius: 20px;
 	width: 480px;
-	height: 540px;
+	height: 570px;
 	color: white;
 	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
@@ -175,4 +179,37 @@ form {
 .contenedor .buttons .btn-reset:active {
 	background: #FF2424;
 	transform: scale(1.2);
+}
+
+.contenedor .adboard {
+	margin: 0.5em 0 0 0;
+	text-align: center;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contenedor .adboard span {
+	display: block;
+	white-space: nowrap;
+	border-right: 4px solid;
+	width: 37ch;
+	animation: typing 4s steps(37) infinite, blink .5s infinite step-end alternate;
+	overflow: hidden
+}
+
+@keyframes typing {
+	from {width: 0;}
+}
+
+@keyframes blink {
+	50% {border-color: transparent;}
+}
+
+@media (max-width: 667px) {
+	.contenedor {
+		width: 100%;
+		border-radius: 0
+	}
 }
