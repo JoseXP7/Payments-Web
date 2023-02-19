@@ -105,7 +105,7 @@ function recaptcha_ok() {
 }
 
 function validarTodo(e) {
-	if (identidad.value.length == 0 && inputEmail.value == "" && inputFile.value == "") {
+	if (identidad.value.length == 0 || inputEmail.value.length == "" || inputFile.value == "") {
 		e.preventDefault()
 		Swal.fire({
 			icon: "error",
@@ -125,6 +125,8 @@ function validarTodo(e) {
 // a saber como funciona lo de arriba, solo se que funciona
 
 //formula /^[0-9-.]+[0-9-.]+[ucla]+@[gmail]+\.[com]{1,3}$/ maximo 28 caracteres
+
+//formula 2: /^(1001|1002|1003|1004|1005|1006)\.(\d){8}\.[ucla]@[gmail]\.[com]$/
 
 
 
